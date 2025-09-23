@@ -1,0 +1,3 @@
+adbutils #Python wrapper for ADB (device control).
+uiautomator2 #To dump UI hierarchy and interact with elements.
+loguru #Structured logging (optional, but helps debugging).
