@@ -1,6 +1,7 @@
 import adbutils
 import uiautomator2 as u2
 from loguru import logger
+from src.agent.perception import parse_bounds
 
 
 def connect_device():
@@ -66,3 +67,16 @@ def press_home(device):
     """
     device.press("home")
     logger.info("Pressed Home")
+    
+def tap_element(device, element):
+    """
+    Tap UI element given its bounds using uiautomator2 device object.
+    """
+    
+    center = parse_bounds(element["bounds"])
+    if center:
+        x, y = center
+        device.click(x, y)
+        logger.info(f"Tapped element at {center} -> {element['text']}")
+    else:
+        logger.warning(f"Could not parse bounds for element: {element}")

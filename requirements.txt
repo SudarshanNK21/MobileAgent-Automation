@@ -1,3 +1,9 @@
 adbutils #Python wrapper for ADB (device control).
 uiautomator2 #To dump UI hierarchy and interact with elements.
 loguru #Structured logging (optional, but helps debugging).
+lxml #For parsing XML (used in UI hierarchy processing).
+torch 
+torchvision #For image processing and model inference.
+transformers #For using pre-trained models (like CLIP).
+pillow #For image manipulation and processing.
+scipy
