@@ -7,12 +7,13 @@ if __name__ == "__main__":
     # Take screenshot
     adb_utils.take_screenshot(device, "vision_test.png")
 
-    # Try to find element by vision
-    box = vision.detect_element("vision_test.png", query="youtube")
-    if box:
-        x1, y1, x2, y2 = box
-        x, y = (x1 + x2)//2, (y1 + y2)//2
-        device.click(x, y)
-        print(f"Tapped element at {x},{y}")
+    # Find element by vision
+    target = vision.detect_element("vision_test.png", query="playstore icon", score_threshold=0.2)
+
+    if target:
+        adb_utils.tap_element(device, target)
+        print(f"Tapped: {target}")
     else:
         print("Element not found by vision")
+
+    print("Debug image saved as vision_debug.png")
