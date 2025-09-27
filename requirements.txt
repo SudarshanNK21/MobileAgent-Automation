@@ -7,3 +7,4 @@ torchvision #For image processing and model inference.
 transformers #For using pre-trained models (like CLIP).
 pillow #For image manipulation and processing.
 scipy
+llava_client
